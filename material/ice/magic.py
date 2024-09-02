@@ -175,7 +175,7 @@ int main(int argc, char *argv[]) {
 # register magic with a running IPython
 def load_ipython_extension(ipython):
     """
-    can be loaded via `%load_ext path.ice_magic` or be configured to be autoloaded by IPython at startup time
+    can be loaded via `%load_ext path.ice.magic` or be configured to be autoloaded by IPython at startup time
     """
 
     # IPython will call the default constructor on it - no need to instantiate
