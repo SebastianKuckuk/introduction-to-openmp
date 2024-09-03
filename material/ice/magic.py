@@ -70,7 +70,7 @@ class ICEMagic(magic.Magics):
 
     def generate_application(self):
         cleaned = self.code
-        cleaned = '\n'.join(l for l in cleaned.split('\n') if '☝' not in l)
+        cleaned = '\n'.join(l.replace('☝', '').rstrip() for l in cleaned.split('\n') if '☝' not in l or l.replace('☝', '').strip())
         cleaned = cleaned.strip()
         
         if not self.args.time:
@@ -88,13 +88,13 @@ std::cout << "Total time: " << 1e3 * (end - start) << " ms" << std::endl;'''
 
 int main(int argc, char *argv[]) {
 ''' + __class__.indent_lines(wrapped) + '''
-}
-'''
+}'''
 
 
     def generate_markdown(self):
         return f'''```cpp
-{self.generate_application()}```'''
+{self.generate_application()}
+```'''
 
 
     def wrap_compile_exec(self):
