@@ -43,7 +43,10 @@ int main(int argc, char *argv[]) {
         // update all inner points
         for (size_t j = 1; j < ny - 1; ++j) {
             for (size_t i = 1; i < nx - 1; ++i) {
-                uNew[j * nx + i] = 0.25 * (u[j * nx + i - 1] + u[j * nx + i + 1] + u[(j - 1) * nx + i] + u[(j + 1) * nx + i]);
+                uNew[j * nx + i] = 0.25 * (  u[j * nx + i - 1] \
+                                           + u[j * nx + i + 1] \
+                                           + u[(j - 1) * nx + i] \
+                                           + u[(j + 1) * nx + i]);
             }
         }
 

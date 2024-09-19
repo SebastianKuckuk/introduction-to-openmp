@@ -12,6 +12,8 @@ int main(int argc, char *argv[]) {
     {
         std::cout << omp_get_thread_num() << std::endl;
         #pragma omp barrier
+        std::cout << "---\n";
+        #pragma omp barrier
         std::cout << 10 * omp_get_thread_num() << std::endl;
     }
 }

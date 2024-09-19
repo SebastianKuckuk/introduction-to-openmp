@@ -10,12 +10,17 @@ int main(int argc, char *argv[]) {
         #pragma omp master
             std::cout << omp_get_thread_num() << std::endl;
 
+        #pragma omp barrier
+
         //# this is the replacement ...
         #pragma omp masked
             std::cout << omp_get_thread_num() << std::endl;
 
+        #pragma omp barrier
+
+        int t = 2;
         //# ... which allows using filter clauses
-        #pragma omp masked filter(2)
-        std::cout << omp_get_thread_num() << std::endl;
+        #pragma omp masked filter(t)
+            std::cout << omp_get_thread_num() << std::endl;
     }
 }

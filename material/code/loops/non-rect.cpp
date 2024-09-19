@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
     constexpr auto N = 16;
 
     #pragma omp parallel for num_threads(8) collapse(2)
-    for (auto j = 0; j < M; ++j) {
+    for (auto j = 0; j < N; ++j) {
         for (auto i = 0; i < j; ++i) {
             std::this_thread::sleep_for(std::chrono::milliseconds(j * N + i));
         }

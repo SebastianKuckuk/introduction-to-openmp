@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
     int *vec;
     vec = (int*)aligned_alloc(64, 1024 * sizeof(int));
 
-    #pragma omp simd simdlen(128) aligned(vec:64)
+    #pragma omp simd simdlen(8) aligned(vec:64)
     for (auto i = 0; i < N; ++i)
         vec[i] = i;
 

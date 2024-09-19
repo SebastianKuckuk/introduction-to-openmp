@@ -11,6 +11,12 @@ int main(int argc, char *argv[]) {
     #pragma omp parallel
     #pragma omp single
     {
+        #pragma omp task
+        {
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            std::cout << "thread " << omp_get_thread_num() << ": before taskgroup" << std::endl;
+        }
+
         #pragma omp taskgroup
         {
             #pragma omp task
@@ -32,15 +38,17 @@ int main(int argc, char *argv[]) {
 
                 #pragma omp task
                 {
-                std::this_thread::sleep_for(std::chrono::milliseconds(10 * c));
-                std::cout << "thread " << omp_get_thread_num() << ": recursive task c = " << c << std::endl;
+                    std::this_thread::sleep_for(std::chrono::milliseconds(10 * c));
+                    std::cout << "thread " << omp_get_thread_num() << ": recursive task c = " << c << std::endl;
                 }
             }
         } //# implicit synchronization - wait for all tasks from this taskgroup to finish
           //# this will also include the recursive task
 
         #pragma omp task
-        std::cout << "thread " << omp_get_thread_num() << ": taskgroup finished" << std::endl;
+        {
+            std::cout << "thread " << omp_get_thread_num() << ": after taskgroup" << std::endl;
+        }
     }
 
     auto end = omp_get_wtime();

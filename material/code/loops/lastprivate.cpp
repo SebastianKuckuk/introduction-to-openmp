@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
 
     int last;
 
-    # pragma omp parallel for lastprivate(last)
+    #pragma omp parallel for lastprivate(last)
         for (auto i = 0; i < 1024; ++i) {
             vec[i] = i;
             last = i;

@@ -4,7 +4,7 @@
 #include <omp.h>
 
 int main(int argc, char *argv[]) {
-    #pragma omp parallel num_threads(2)
+    #pragma omp parallel num_threads(4)
     {
         #pragma omp sections
         {

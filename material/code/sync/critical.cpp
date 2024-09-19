@@ -8,5 +8,7 @@ int main(int argc, char *argv[]) {
     {
         #pragma omp critical
             std::cout << omp_get_thread_num() << std::endl;
+
+        std::cout << omp_get_thread_num() << std::endl;
     }
 }
