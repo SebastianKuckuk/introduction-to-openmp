@@ -69,7 +69,7 @@ int main(int argc, char *argv[]) {
     std::cout << "  bandwidth:     " << 1e-9 * 2 * sizeof(double) * nx * nIt / elapsedSeconds.count() << " GB/s\n";
 
     // check solution - each element should be increased by 
-    for (size_t i = 1; i < nx - 1; ++i) {
+    for (size_t i = 0; i < nx; ++i) {
         if (i + nIt != src[i]) {
             std::cout << "  Stream check failed for element " << i << " (expected " << i + nIt << " but got " << src[i] << ")" << std::endl;
             break;
