@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
     auto start = std::chrono::steady_clock::now();
 
     // perform nIt iterations
-    for (size_t i = 0; i < nIt; ++i) {
+    for (size_t it = 0; it < nIt; ++it) {
         double res = 0;
         
         // update all inner points and calculate residual
@@ -47,13 +47,14 @@ int main(int argc, char *argv[]) {
         for (size_t j = 1; j < ny - 1; ++j) {
             for (size_t i = 1; i < nx - 1; ++i) {
                 uNew[j * nx + i] = 0.25 * (u[j * nx + i - 1] + u[j * nx + i + 1] + u[(j - 1) * nx + i] + u[(j + 1) * nx + i]);
+
                 const double localRes = 4 * u[j * nx + i] - (u[j * nx + i - 1] + u[j * nx + i + 1] + u[(j - 1) * nx + i] + u[(j + 1) * nx + i]);
                 res += localRes * localRes;
             }
         }
 
         res = sqrt(res);
-        std::cout << "  Residual for iteration " << i << " is " << res << std::endl;
+        std::cout << "  Residual for iteration " << it << " is " << res << std::endl;
 
         // swap source and destination array
         std::swap(u, uNew);
