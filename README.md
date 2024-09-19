@@ -6,4 +6,4 @@ Start by cloning it
 git clone https://github.com/SebastianKuckuk/introduction-to-openmp.git
 ```
 
-Afterwards navigate to the *overview* notebook for further guidelines.
+Afterwards navigate to the [overview](overview.ipynb) notebook for further guidelines.
