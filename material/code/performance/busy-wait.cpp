@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
     {
         auto start = omp_get_wtime();
         auto duration = 0.;
-        while (duration < 1.000) //# seconds
+        while (duration < 10.000) //# seconds
            duration = omp_get_wtime() - start;
     }
 }
