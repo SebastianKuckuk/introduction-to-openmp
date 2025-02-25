@@ -70,7 +70,7 @@ class ICEMagic(magic.Magics):
 
     def generate_application(self):
         cleaned = self.code
-        cleaned = '\n'.join(l.replace('☝', '').rstrip() for l in cleaned.split('\n') if '☝' not in l or l.replace('☝', '').strip())
+        cleaned = '\n'.join(l.replace('👆', '').rstrip() for l in cleaned.split('\n') if '👆' not in l or l.replace('👆', '').strip())
         cleaned = cleaned.strip()
         
         if not self.args.time:
