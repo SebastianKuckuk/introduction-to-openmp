@@ -10,10 +10,10 @@ int main(int argc, char *argv[]) {
     int last;
 
     #pragma omp parallel for lastprivate(last)
-        for (auto i = 0; i < 1024; ++i) {
+        for (auto i = 0; i < N; ++i) {
             vec[i] = i;
             last = i;
         }
 
-    std::cout << last << " should be " << vec[N - 1] << std::endl;
+    std::cout << last << " should be " << N - 1 << std::endl;
 }
