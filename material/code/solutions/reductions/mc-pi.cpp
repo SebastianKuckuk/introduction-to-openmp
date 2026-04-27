@@ -42,14 +42,14 @@ int main(int argc, char *argv[]) {
     auto end = std::chrono::steady_clock::now();
     auto elapsedSeconds = std::chrono::duration<double>(end - start);
 
-    std::cout << "  #samples:     " << nSample << "\n";
-    std::cout << "  elapsed time: " << 1e3 * elapsedSeconds.count() << " ms\n";
-    std::cout << "  MLUP/s:       " << 1e-6 * nSample / elapsedSeconds.count() << "\n";
+    std::cout << "  #samples:        " << nSample << "\n";
+    std::cout << "  elapsed time:    " << 1e3 * elapsedSeconds.count() << " ms\n";
+    std::cout << "  MLUP/s:          " << 1e-6 * nSample / elapsedSeconds.count() << "\n";
 
     // compute and print final solution
     auto pi = 4. * ((double)numHits / nSample);
-    std::cout << "  Estimate for pi is " << pi << std::endl;
-    std::cout << "  Error is " << std::abs(pi - M_PI) / M_PI << std::endl;
+    std::cout << "  Estimate for pi: " << pi << std::endl;
+    std::cout << "  Relative error:  " << std::abs(pi - M_PI) / M_PI << std::endl;
 
     return 0;
 }
