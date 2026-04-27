@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
     std::cout << "  MLUP/s:        " << 1e-6 * nx * nIt / elapsedSeconds.count() << "\n";
     std::cout << "  bandwidth:     " << 1e-9 * 2 * sizeof(double) * nx * nIt / elapsedSeconds.count() << " GB/s\n";
 
-    // check solution - each element should be increased by 
+    // check solution - each element should be increased by nIt
     for (size_t i = 0; i < nx; ++i) {
         if (i + nIt != src[i]) {
             std::cout << "  Stream check failed for element " << i << " (expected " << i + nIt << " but got " << src[i] << ")" << std::endl;
