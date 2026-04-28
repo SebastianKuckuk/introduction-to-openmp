@@ -92,7 +92,7 @@ int main(int argc, char *argv[]) {
 
 
     def generate_markdown(self):
-        return f'''```cpp
+        return f'''```c++
 {self.generate_application()}
 ```'''
 
