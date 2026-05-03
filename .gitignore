@@ -20,3 +20,7 @@ material/code/solutions/reductions/stencil-2d
 material/code/solutions/target/julia-set
 material/code/solutions/target/stencil-2d
 material/code/solutions/target/stream
+
+# generated output files
+material/julia.png
+material/julia.ppm
