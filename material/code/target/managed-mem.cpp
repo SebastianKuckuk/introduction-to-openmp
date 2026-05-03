@@ -4,7 +4,7 @@
 #include <omp.h>
 
 int main(int argc, char *argv[]) {
-    #pragma omp requires unified_shared_memory
+    //# #pragma omp requires unified_shared_memory
 
     int *vec = new int[10];
     for (auto i = 0; i < 10; ++i)

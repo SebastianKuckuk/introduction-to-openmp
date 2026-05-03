@@ -8,8 +8,8 @@ int main(int argc, char *argv[]) {
     #pragma omp parallel
     {
         //# implicit shared(localVar)
-        //# bad practice -- race condition
-        static int localVar = omp_get_thread_num();
+        //# bad practice - race condition
+        static int localVar = 0;
         std::cout << ++localVar << std::endl;
     }
 

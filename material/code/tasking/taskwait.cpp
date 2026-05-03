@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
         #pragma omp taskwait
 
         #pragma omp task
-        std::cout << "thread " << omp_get_thread_num() << ": all tasks finished" << std::endl;
+        std::cout << "thread " << omp_get_thread_num() << ": all non-recursive tasks finished" << std::endl;
     }
 
     auto end = omp_get_wtime();

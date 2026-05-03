@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
 
     #pragma omp parallel
         //# implicit shared(staticVar)
-        //# bad practice -- race condition
+        //# bad practice - race condition
         std::cout << ++staticVar << std::endl;
 
     std::cout << staticVar << std::endl;
