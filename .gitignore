@@ -3,6 +3,10 @@ __pycache__
 .conda
 .vs
 
+# external libraries
+lodepng.cpp
+lodepng.h
+
 # compiled binaries
 material/code/data-env/exercise
 material/code/examples/julia-set
