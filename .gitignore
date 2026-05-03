@@ -2,3 +2,21 @@
 __pycache__
 .conda
 .vs
+
+# compiled binaries
+material/code/data-env/exercise
+material/code/examples/julia-set
+material/code/examples/mc-pi
+material/code/examples/stencil-2d
+material/code/examples/stream
+material/code/solutions/loops/julia-set
+material/code/solutions/loops/stencil-2d-collapse
+material/code/solutions/loops/stencil-2d-inner
+material/code/solutions/loops/stencil-2d-outer
+material/code/solutions/loops/stream
+material/code/solutions/performance/stream
+material/code/solutions/reductions/mc-pi
+material/code/solutions/reductions/stencil-2d
+material/code/solutions/target/julia-set
+material/code/solutions/target/stencil-2d
+material/code/solutions/target/stream
